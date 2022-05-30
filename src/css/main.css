@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+\\ html {
+    overflow: hidden;
+}
+
+.container {
+    width: 1440px;
+    height: 960px;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.section {
+    width: 980px;
+    height: 330px;
+    display: flex;
+    align-items: center;
+}
+
+
+.img {
+    width: 35vw;
+    height: 35vh;
+    object-fit: cover;
+    margin-right: 5rem;
+}
+
+.content {
+    border: 2px solid red;
+    width: 26vw;
+    height: 26vh;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+}
