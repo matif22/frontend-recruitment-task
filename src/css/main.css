@@ -1,27 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-\\ html {
-    overflow: hidden;
-}
-
-.container {
-    width: 1440px;
-    height: 960px;
-    display: flex;
-    justify-content: center;
-    
-    
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 .section {
-    width: 980px;
-    height: 330px;
+    position: relative;
+    max-width: 1440px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 96px;
 }
 
 
@@ -33,11 +29,120 @@
 }
 
 .content {
-    border: 2px solid red;
-    width: 26vw;
-    height: 26vh;
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.content h1 {
-    font-size: 2.5rem;
+h1 {
+    font-weight: 700;
+    font-size: 42px;
+    margin-bottom: 24px;
+}
+
+p {
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+.alert-open-button {
+    width: 148px;
+    min-height: 48px;
+    background-color: #E4C1AE;
+    border-radius: 32px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    width: 50vw;
+    height: 200px;
+    z-index: 10;
+    background-color: #FFFFFF;
+}
+
+.alert.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.alert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.alert-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-open-button {
+    cursor: pointer;
+}
+
+.alert-close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: large;
+    font-weight: 500;
+}
+
+.alert-body {
+    padding-left: 50px;
+}
+
+.overlay {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media only screen and (max-width: 870px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img {
+        width: 100vw;
+        height: 30vh;
+        margin: 0;
+    
+    } 
+    .content {
+        width: 100vw;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        margin: 0;  
+    }
+    p {
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
 }
